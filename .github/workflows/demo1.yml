@@ -1,16 +1,22 @@
-name: Git Hub Actions Demo
-on: push
+name: GitHub Actions Demo
+
+on:
+  push:
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Hello World Git hub Action push !"
+      - name: Step 1
+        run: echo "Hello World GitHub Action push!"
+
   my-job1:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Hello World Git hub Action 2"
-    script:
-      - echo 1+1
-      - echo $time
+      - name: Step 2 - Echo message
+        run: echo "Hello World GitHub Action 2"
+
+      - name: Step 3 - Run math and show time
+        run: |
+          echo $((1+1))
+          echo "Current time: $(date)"
