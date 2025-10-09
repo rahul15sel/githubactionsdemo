@@ -11,3 +11,6 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello World Git hub Action 2"
+    script:
+      - echo 1+1
+      - echo $time
