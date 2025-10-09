@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo "Hello World!"
+        run: echo "Hello World Git hub Action !"
   my-job1:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo "Hello World Job 2"
+        run: echo "Hello World Git hub Action 2"
