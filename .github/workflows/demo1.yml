@@ -1,20 +1,20 @@
-name: GitHub Actions Demo
+name: GitHub Actions Demo - Rahul
 
 on:
   push:
 
 jobs:
-  my-job:
+  first-job:
     runs-on: ubuntu-latest
     steps:
       - name: Step 1
-        run: echo "Hello World GitHub Action push!"
+        run: echo "Hello World GitHub Action push Step 1!"
 
-  my-job1:
+  second-job1:
     runs-on: ubuntu-latest
     steps:
       - name: Step 2 - Echo message
-        run: echo "Hello World GitHub Action 2"
+        run: echo "Hello World GitHub Action 2 Step 2!"
 
       - name: Step 3 - Run math and show time
         run: |
