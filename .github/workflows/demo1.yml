@@ -5,20 +5,48 @@ on:
 
 jobs:
 
-  first-job:
+  code:
     runs-on: ubuntu-latest
     steps:
       - name: Step 1
-        run: echo "Hello World GitHub Action push Step 1!"
+        run: echo "Stage 1 Code completed!"
 
-  second-job1:
-    needs: first-job   # <-- ensures this job runs after first-job finishes
+  lintcheck:
+    needs: code   # <-- ensures this job runs after first-job finishes
     runs-on: ubuntu-latest
     steps:
       - name: Step 2 - Echo message
-        run: echo "Hello World GitHub Action 2 Step 2!"
+        run: echo "Stage 2 Lintcheck completed!"
 
       - name: Step 3 - Run math and show time
         run: |
           echo $((1+1))
           echo "Current time: $(date)"
+
+  build:
+    needs: lintcheck   # <-- ensures this job runs after first-job finishes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 2 - Echo message
+        run: echo "Stage 3 build completed!!"
+
+  testing:
+    needs: build   # <-- ensures this job runs after first-job finishes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 2 - Echo message
+        run: echo "Stage 4 testing completed!"
+
+  deploy:
+    needs: testing   # <-- ensures this job runs after first-job finishes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 2 - Echo message
+        run: echo "Stage 5 deploy completed!"
+
+  release:
+    needs: deploy   # <-- ensures this job runs after first-job finishes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 2 - Echo message
+        run: echo "Stage 6 release completed!"
