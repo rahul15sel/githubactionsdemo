@@ -1,4 +1,4 @@
-name: GitHub Actions Demo - Rahul
+name: GitHub Actions Demo - Update
 
 on:
   push:
